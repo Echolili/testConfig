@@ -14,15 +14,49 @@
          */
         function arraysSimilar(arr1, arr2){
             if(arr1 == null || arr2 == null) {
-                return '检验失败'
-            }
-            if (arr1.length != arr2.length) {
-                return '校验失败'
-            }
-            for(let i = 0; i < arr1.length; i++) {
-                
-            }
+        return flase
+    }
+    if (arr1.length != arr2.length) {
+        return false 
+    }
+    var list1 = [];
+    var list2 = [];
+    for(let i = 0; i < arr1.length; i++) {
+        if (arr1[i] === null) {
+            list1.push('null');
+        }else if(arr1[i] === undefined){
+            list1.push('undefined');
         }
+        // else if(arr1[i] === window){
+        //     list1.push('window');
+        // }
+        else {
+            list1.push(arr1[i].constructor.name);
+        }
+        
+        console.log(list1)
+    }
+    arr2.forEach(function(item,index,arr2) {
+        if (item === null) {
+            list2.push('null');
+        }else if(item === undefined){
+            list2.push('undefined');
+        }
+        // else if(item === window){
+        //     list2.push('window');
+        // }
+        else {
+            list2.push(item.constructor.name);
+        }
+    }); 
+    list1.sort();
+    list2.sort();
+    if (list1.join() == list2.join()) {
+        return true;
+    }else {
+        return false;
+    }
+    }
     </script>
     <script src="testData.js"></script>
 </body>
