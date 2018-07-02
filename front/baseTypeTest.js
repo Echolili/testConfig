@@ -35,6 +35,9 @@ if (null === null) {
 if (NaN == NaN) {
     console.log(7)
 }
+if (NaN === NaN) {
+    console.log(77)
+}
 if (undefined === undefined) {
     console.log(8)
 }
