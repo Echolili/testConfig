@@ -58,7 +58,7 @@ function Foo(){
     console.log(0123);//打印83,严格模式下，没有八进制写法，报SyntaxError
 }();
 !function(){
-    function eval(){}
+    function eval(){}                            
     console.log(eval);//打印function eval(){},严格模式下，eval,arguments是关键字，不能作为变量，函数名，报SyntaxError
 }();
 !function(){

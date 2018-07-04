@@ -33,7 +33,7 @@ delete obj.z ;
 obj.z//3,不会影响原型属性
 
 //原型链中create方法
-var object = Object .create({x:1});
+var object = Object.create({x:1});
 object.x//1
 object.hasOwnProperty('x')//false
 console.log(typeof object.toString);//function，因为object——{x:1}——Object.prototype——null
