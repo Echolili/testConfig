@@ -54,6 +54,10 @@ delete window.ohNO;//true
 
 //自定义枚举属性
 Object.defineProperty(cat,'prict',{enumerable : false,value:1000});//默认不能枚举
+Object.defineProperties(cat,{
+  title:{value:'fe',enumerable:true},
+  corp:{value:'BABA',enumerable:true,writable:false},
+  servicecode:{value:'lili',enumerable:true,writable:false,configurable:false}});
 console.log(Object.propertyIsEnumerable);//false
 Object.hasOwnProperty('prict')//true
 
@@ -83,3 +87,13 @@ try {
 } catch (error) {
   console.log('error11111111', error.message);
 }
+
+//extensible标签,可扩展的
+var obj = {x:1,y:2};
+Object.preventExtensions(obj);//让对象不可扩展
+Object.seal(obj);//让对象不可扩展，且对象上的属性不可修改(configurable:false)
+Object.freeze(obj);//让对象不可扩展，且对象上的属性不可写，不可修改。(enumerable:true,writable:false,configurable:false)
+
+//序列化
+JSON.stringify(obj);//序列化obj对象
+
